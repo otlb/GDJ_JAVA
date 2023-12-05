@@ -5,6 +5,7 @@ public class Sutdy4For {
 		
 		System.out.println("Master");
 		System.out.println("연습하기");
+		System.out.println("연습하기2");
 		
 		
 		
