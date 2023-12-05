@@ -11,7 +11,7 @@ public class Sutdy4For {
 		
 		System.out.println("1번입력 단발 2번입력 점사");
 		int danbal = sc.nextInt();
-		String tang = "탕";
+		String tang = "탕탕탕";
 
 		
 		if(danbal==1) {
@@ -24,8 +24,8 @@ public class Sutdy4For {
 		if(danbal==2) {
 			for(int i=1; i<4; i++) {
 				for(int j=3; j<31; j=j+3) {
-					System.out.println(i+"번째탄창 "+j+"발");
 					System.out.println(tang);
+					System.out.println(i+"번째탄창 "+j+"발");
 					}
 				}
 			}
