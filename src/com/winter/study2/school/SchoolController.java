@@ -8,9 +8,11 @@ public class SchoolController {
 	public void start() {
 		
 		Scanner sc = new Scanner(System.in);
+		
 		SchoolService schoolService = new SchoolService();
-		SchoolView schoolView = new SchoolView();
 		Student [] students = null;
+		
+		SchoolView schoolView = new SchoolView();
 		
 		int check;
 		
