@@ -30,9 +30,15 @@ public class SchoolController {
 			}else if(check==2) {
 				schoolView.view(students);			
 			}else if(check==3) {
-				System.out.println("3.학생정보검색");
+			Student s  = schoolService.findByNum(students);
+			if(s != null) {
+				schoolView.view(s);
+			}else {
+				schoolView.view("학생이없다");
+			}			
 			}else if(check==4) {
-				System.out.println("4.학생정보추가");
+				
+				
 			}else {
 				System.out.println("프로그램이 종료되었습니다.");
 				select = false;
