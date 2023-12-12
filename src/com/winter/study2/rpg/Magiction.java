@@ -1,32 +1,39 @@
 package com.winter.study2.rpg;
 
-public class Magiction {
+public class Magiction extends Character {
 
-	int hp;
-	int mp;
-	String name;
+	
+	private int mp;
 	
 	
 	
+	
+	public int getMp() {
+		return mp;
+	}
+
+
+	public void setMp(int mp) {
+		this.mp = mp;
+	}
+
+
 	public void info() {
+		super.superInfo();
+		System.out.println(this.mp);
 		
-//		String name="abc";
-		//멤버메서드내에서 멤버변수를 접근해서 사용 가능
-//		name="iu";
+	}
+
+
+	@Override
+	public void attack() {
+		System.out.println("마법공격");
 		
-		System.out.println(this);
-		System.out.println("Name : "+name);
-		System.out.println("Hp : " +this.hp);
-		this.t1();
-//		t1();
 	}
 	
 	
-	public void t1() {
-		System.out.println("Test 메서드 입니다");
-		
-	}
 	
+
 	
 	
 }

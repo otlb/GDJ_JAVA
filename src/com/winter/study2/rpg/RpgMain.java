@@ -4,14 +4,17 @@ public class RpgMain {
 
 	public static void main(String[] args) {
 		
-		Magiction magiction = new Magiction();
-		magiction.name = "aig";
-		magiction.hp=100;
-		magiction.mp=200;
-				
-		Magiction magiction2 = new Magiction();
+	Warrier	warrier = new Warrier();
+	
+	warrier.setName("ingwun");
 		
-		magiction.info();
+	Archer archer = new Archer();
+	
+	
+		archer.attack();		
+		
+		warrier.attack();
+		
 	}
 
 }
