@@ -15,10 +15,7 @@ public class SchoolMain {
 		//테스트
 		
 		SchoolController controller = new SchoolController();
-		controller.start();
-
-		
-			
+		controller.start();			
 		
 			
 		
