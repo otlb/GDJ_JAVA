@@ -23,6 +23,12 @@ public class ApiMain {
 		System.out.println(ab);
 		
 		
+		StringBuffer sb = new StringBuffer();
+		sb.append("abc");
+		sb.append(123);
+		
+		
+		
 	}
 	
 	

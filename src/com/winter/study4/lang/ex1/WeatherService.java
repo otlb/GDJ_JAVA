@@ -51,8 +51,10 @@ public class WeatherService {
 			
 			weatherDatas[count] = weatherData;
 			count++;
-		}				
+		}			
 		
+		
+	
 		return weatherDatas;
 		
 		
