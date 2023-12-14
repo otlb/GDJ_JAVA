@@ -23,53 +23,66 @@ public class Ex2Main {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("주민번호 입력 : ");//930621-1066611 
 		String human = sc.next();
-		String a = human.replaceAll("-","");
+		//교수님이 한거 
+		char [] chs = human.toCharArray();
 		
-		
-		String sum = a.substring(0, 8);
-		String sum2 = a.substring(8, 12);	
-		
-				
-		int[] intSum = new int[sum.length()];	
-		
-		for(int i=0; i<sum.length();i++) {
-			intSum[i] = sum.charAt(i)-'0';
-		}
-		int[] intSum2 = new int[sum2.length()];	
-		
-		for(int i=0; i<sum2.length();i++) {
-			intSum2[i] = sum2.charAt(i)-'0';
+		for(int i=0; i<human.length()-1;i++) {
+			char c = human.charAt(i);
+			
 		}
 		
-		int count = 2;
-		for(int i =0; i<intSum.length;i++) {
-			intSum[i]= intSum[i]*count;
-			count++;
-		}
-		int count2 = 2;
-		for(int i =0; i<intSum2.length;i++) {
-			intSum2[i]= intSum2[i]*count2;
-			count2++;
-		}
 		
-		int [] newIntsum = new int[intSum.length + intSum2.length];
-		int index=0;
-		for(int i=0; i<intSum.length;i++) {
-			newIntsum[index++] = intSum[i];
-		}
-		for(int i=0; i<intSum2.length;i++) {
-			newIntsum[index++] = intSum2[i];
-		}
-//		System.out.println(Arrays.toString(newIntsum));
 		
-		int num =0;
-		for(int i=0; i<newIntsum.length;i++) {
-			num+=newIntsum[i];
-		}
-		char b = a.charAt(12);
-		String st = String.valueOf(b);
 		
-		int lastnumber = Integer.parseInt(st);
+		
+		
+//		String a = human.replaceAll("-","");
+//		
+//		
+//		String sum = a.substring(0, 8);
+//		String sum2 = a.substring(8, 12);	
+//		
+//				
+//		int[] intSum = new int[sum.length()];	
+//		
+//		for(int i=0; i<sum.length();i++) {
+//			intSum[i] = sum.charAt(i)-'0';
+//		}
+//		int[] intSum2 = new int[sum2.length()];	
+//		
+//		for(int i=0; i<sum2.length();i++) {
+//			intSum2[i] = sum2.charAt(i)-'0';
+//		}
+//		
+//		int count = 2;
+//		for(int i =0; i<intSum.length;i++) {
+//			intSum[i]= intSum[i]*count;
+//			count++;
+//		}
+//		int count2 = 2;
+//		for(int i =0; i<intSum2.length;i++) {
+//			intSum2[i]= intSum2[i]*count2;
+//			count2++;
+//		}
+//		
+//		int [] newIntsum = new int[intSum.length + intSum2.length];
+//		int index=0;
+//		for(int i=0; i<intSum.length;i++) {
+//			newIntsum[index++] = intSum[i];
+//		}
+//		for(int i=0; i<intSum2.length;i++) {
+//			newIntsum[index++] = intSum2[i];
+//		}
+////		System.out.println(Arrays.toString(newIntsum));
+//		
+//		int num =0;
+//		for(int i=0; i<newIntsum.length;i++) {
+//			num+=newIntsum[i];
+//		}
+//		char b = a.charAt(12);
+//		String st = String.valueOf(b);
+//		
+//		int lastnumber = Integer.parseInt(st);
 		
 //			num = 11-num%11;			
 //			if(num<10) {
