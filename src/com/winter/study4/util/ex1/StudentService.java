@@ -52,7 +52,9 @@ public class StudentService {
 		return students;
 		
 		
-		
+		//학생정보검색 findByName 이름으로 검색
+		//학생정보추가 studentAdd 
+		//학생정보삭제 studentDelete 이름으로 검색해서 삭제
 		
 		
 	}
