@@ -23,19 +23,76 @@ public class Ex2Main {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("주민번호 입력 : ");//930621-1066611 
 		String human = sc.next();
-		//교수님이 한거 
-		char [] chs = human.toCharArray();
 		
-		for(int i=0; i<human.length()-1;i++) {
-			char c = human.charAt(i);
-			
+		char [] chs = human.toCharArray();		
+		
+					
+		
+		char a = human.charAt(7);
+		
+		System.out.print("성별은? ");
+		if(a == '1' || a=='3') {
+			System.out.println("남자입니다.");
+		}else if(a == '2' || a=='4'){
+			System.out.println("여자입니다.");
+		}else {
+			System.out.println("잘못입력했습니다.");
 		}
 		
+		System.out.println("=======================");
 		
+		System.out.print("나이는? ");
 		
+		String age = human.substring(0, 2);
+		int num = Integer.parseInt(age);
+		num = 123-num;
+		System.out.println(num+"살");
 		
+		System.out.println("=======================");
 		
+		String weanther = human.substring(2, 4);
+		int num2 = Integer.parseInt(weanther);
+		if(2 < num2 && num2<6 ) {
+			System.out.println("태어난 계절은 봄");
+		}else if(5<num2 && num2<9){
+			System.out.println("태어난 계절은 여름");
+		}else if(8<num2 && num2<11) {
+			System.out.println("태어난 계절은 가을");
+		}else if(num2==12 || num2==1 || num2==2) {
+			System.out.println("태어난 계절은 겨울");
+		}else {
+			System.out.println("잘못입력했습니다.");
+		}
 		
+		System.out.println("=======================");
+		
+		//교수님이 한거 	
+		int temp = 2;
+		int sum4 = 0;
+		for(int i=0; i<human.length()-1;i++) {
+			if(i==6) {
+				continue;
+			}
+			
+			if(temp>9) {
+				temp=2;
+			}
+			char c = chs[i];//human.charAt(i);
+			int n = Integer.parseInt(String.valueOf(c));
+			sum4 = sum4+n*temp;
+			temp++;
+		}
+		sum4 = 11-sum4%11;
+		if(sum4>9) {
+			sum4=sum4%10;
+			System.out.println("올바른 주민번호입니다.");
+		}else if(sum4 == chs[13]){
+			System.out.println("올바른 주민번호입니다.");
+		}else {
+			System.out.println("잘못입력했습니다.");
+		}
+		
+
 //		String a = human.replaceAll("-","");
 //		
 //		
@@ -89,52 +146,6 @@ public class Ex2Main {
 //				
 //				System.out.println("정상입니다.");							
 //			}
-			
-
-			
-		
-		
-		
-//		char a = human.charAt(7);
-//		
-//		System.out.print("성별은? ");
-//		if(a == '1' || a=='3') {
-//			System.out.println("남자입니다.");
-//		}else if(a == '2' || a=='4'){
-//			System.out.println("여자입니다.");
-//		}else {
-//			System.out.println("잘못입력했습니다.");
-//		}
-//		
-//		System.out.println("=======================");
-//		
-//		System.out.print("나이는? ");
-//		
-//		String age = human.substring(0, 2);
-//		int num = Integer.parseInt(age);
-//		num = 123-num;
-//		System.out.println(num+"살");
-//		
-//		System.out.println("=======================");
-//		
-//		String weanther = human.substring(2, 4);
-//		int num2 = Integer.parseInt(weanther);
-//		if(2 < num2 && num2<6 ) {
-//			System.out.println("태어난 계절은 봄");
-//		}else if(5<num2 && num2<9){
-//			System.out.println("태어난 계절은 여름");
-//		}else if(8<num2 && num2<11) {
-//			System.out.println("태어난 계절은 가을");
-//		}else if(num2==12 || num2==1 || num2==2) {
-//			System.out.println("태어난 계절은 겨울");
-//		}else {
-//			System.out.println("잘못입력했습니다.");
-//		}
-//		
-//		System.out.println("=======================");
-		
-			
-
 		
 		
 		
