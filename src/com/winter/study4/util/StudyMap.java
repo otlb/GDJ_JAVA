@@ -24,6 +24,8 @@ public class StudyMap {
 			System.out.println("key : "+key);
 			System.out.println(map.get(key));
 		}
+		
+		
 	}
 
 }

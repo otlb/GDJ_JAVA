@@ -25,6 +25,7 @@ public class StudySetInfo {
 				for(int j=0; j<i;j++) {
 					if(ar.get(i)==ar.get(j)) {
 						i--;
+						break;
 					}					
 				}
 			}	

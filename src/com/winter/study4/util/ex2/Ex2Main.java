@@ -7,7 +7,7 @@ public class Ex2Main {
 	public static void main(String[] args) {
 		
 		StudySetInfo info = new StudySetInfo();
-		info.ex2();
+		info.ex1();
 		
 		
 
