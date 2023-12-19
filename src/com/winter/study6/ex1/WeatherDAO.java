@@ -34,7 +34,7 @@ public class WeatherDAO {
 		
 		StringTokenizer str = new StringTokenizer(s,"-");
 				
-		while(str.hasMoreTokens()) {
+		
 			
 			WeatherDate date = new WeatherDate();
 			date.setName(str.nextToken());
@@ -42,7 +42,7 @@ public class WeatherDAO {
 			date.setWeather(str.nextToken());
 			date.setHum(Integer.parseInt(str.nextToken()));
 			dates.add(date);
-		}
+		
 		}
 				
 	
