@@ -8,33 +8,48 @@ public class Study5Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("숫자입력");
+		System.out.println("숫자 입력");
 		try {
-			int num = sc.nextInt();
-//			throw new InputMismatchException();
+			int num=sc.nextInt();
+			//throw new InputMismatchException();
 		
 			System.out.println("정상 진행");
+			String str=null;
+//		Error		
+//		int a;
+//		System.out.println(a);
 		
-		String str =null;
-		
-//		System.out.println(str.toString());
-		
-		
-		int [] ar1 = new int[2];
-		ar1[3]=10;
-//		new = ArrayIndexOutOfBoundsException();
-		}catch(RuntimeException e) {
-			System.out.println("Exception 발생");
+			Test t = new Test();
+			
+			int [] arr = new int[2];
+			
+			arr[3]=10;
+		//new ArrayIndexOutOfBoundsException();
+		}catch (InputMismatchException e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			// TODO: handle exception
+		}catch (ArrayIndexOutOfBoundsException e) {
+			// TODO: handle exception
+			
+		}catch (RuntimeException e) {
+			// TODO: handle exception
+		}catch (Exception e) {
+			// TODO: handle exception
+		}catch (Throwable e) {
+			// TODO: handle exception
+		}finally {
+			
 		}
 		
-		Test t = new Test();
-		
-		int a = 10;
+		int a =10;
 		a = a/0;
+		new ArithmeticException();
 		
-		ArrayList<Integer> ar = null;
-		t.t1(ar);
-		System.out.println("종료합니다.");		
+		ArrayList<Integer> ar=null;
+		//t.t1(ar);
+
+		System.out.println("종료 합니다.");
 		
 
 	}
