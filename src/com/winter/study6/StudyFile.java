@@ -38,7 +38,7 @@ public class StudyFile {
 	
 	public void f3() throws IOException {
 		Scanner sc=new Scanner(System.in);
-		File file = new File("c:\\study\\test2.txt");
+		File file = new File("c:\\study\\save1.txt");
 		
 		FileWriter fw = new FileWriter(file,true);
 		
@@ -75,12 +75,12 @@ public class StudyFile {
 			System.out.println(f.length());
 		}
 		
-		File [] fr = file.listFiles();
-		
-		for(File s : fr) {			
-		System.out.println(s);
-		System.out.println(s.length());
-		}
+//		File [] fr = file.listFiles();
+//		
+//		for(File s : fr) {			
+//		System.out.println(s);
+//		System.out.println(s.length());
+//		}
 		
 	}
 
