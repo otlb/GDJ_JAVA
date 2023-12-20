@@ -26,14 +26,20 @@ public class WeatherDAO {
 	//getWeathers
 	//file에서 내용을 읽어오는 역할을 하는 메서드
 	//파싱 작업 ,토큰 분류별 저장 그걸 Arayy 저장  
-	public ArrayList<WeatherDate> getWeathers() throws Exception {
+	public void getWeathers() throws Exception {
 		
 		
 		File file = new File("c:\\study\\weather");	
 		String [] st = file.list();
 		
+		for(int i=0; i<st.length;i++) {	
+			for(String s:st) {
+				s.split(".");
+			}
+			
+		}
 		for(int i=0; i<st.length;i++) {
-			st[i].split(".");
+			System.out.println(str[i]);
 		}
 		
 //		for(String s:st) {
@@ -43,121 +49,121 @@ public class WeatherDAO {
 //			st2[0]=str[0];
 //		}
 		
-		
-		FileReader fr = new FileReader(file);		
-		BufferedReader br = new BufferedReader(fr);
-		br.readLine();
-		
-		ArrayList<WeatherDate> dates = new ArrayList<>();
-		
-		while(true) {
-			
-		String s = br.readLine();	
-		if(s==null) {
-			break;
-		}			
-		
-		StringTokenizer str = new StringTokenizer(s,"-");
-				
-		
-			
-			WeatherDate date = new WeatherDate();
-			date.setName(str.nextToken());
-			date.setTemp(Integer.parseInt(str.nextToken()));
-			date.setWeather(str.nextToken());
-			date.setHum(Integer.parseInt(str.nextToken()));
-			dates.add(date);
-		
-		}
-				
-	
-		
-		
-		br.close();
-		fr.close();
-		
-		return dates;	
-	}
-	
-	//검색
-	public WeatherDate getDetail(List<WeatherDate> ar,Scanner sc) {
-		System.out.println("도시명 입력");
-		WeatherDate date = new WeatherDate();
-		date.setName(sc.next());
-		for(WeatherDate w:ar) {
-			if(w.getName().equals(date.getName())) {
-				return w;
-				
-			}
-		}
-		return null; //못찾으면 널 
-		
-	}
-	//추가
-	public boolean add(List<WeatherDate> ar, Scanner sc) {
-		WeatherDate date = new WeatherDate();
-		System.out.println("도시 입력");
-		date.setName(sc.next());
-		System.out.println("기온 입력");
-		date.setTemp(sc.nextInt());
-		System.out.println("날씨 입력");
-		date.setWeather(sc.next());
-		System.out.println("습도 입력");
-		date.setHum(sc.nextInt());
-		
-		
-		return ar.add(date); // true 는 성공 false 실패
-	}
-	
-	//삭제
-	public boolean delete(List<WeatherDate> ar, Scanner sc) {
-		boolean result = false;
-		System.out.println("도시명 입력");
-		String name = sc.next();
-		for(WeatherDate w:ar) {
-			if(w.getName().equals(name)) {
-				result = ar.remove(w);
-				break;
-			}
-		}
-		return result;
-	}
-	
-	//저장
-	public WeatherDate save(List<WeatherDate> ar) throws Exception {
-		//1.파일에 작성
-		//파일명은 save.txt
-		//##날씨정보
-		//도시명-기온-정보-습도
-		//20231220+count
-		WeatherDAO.count++;
-		
-		Calendar ca = Calendar.getInstance();
-//		int y = ca.get(Calendar.YEAR);
-//		int m = ca.get(Calendar.MONTH);
-//		int d = ca.get(Calendar.DATE);
-//		String fileName = String.valueOf(y)+m+d+WeatherDAO.count;
-		String fileName=ca.getTimeInMillis()+".txt";
-		
-		File file = new File("c:\\study\\weather");
-		file = new File(file,fileName);
-		FileWriter fw = new FileWriter(file); 
-		WeatherDate date = new WeatherDate();
-		
-		fw.write("##날씨정보\r");
-		
-		for(WeatherDate w:ar) {
-	
-			fw.write(w.getName()+"-");
-			fw.write(w.getTemp()+"-");
-			fw.write(w.getWeather()+"-");
-			fw.write(w.getHum()+"\r");
-		
-			fw.flush();	
-		}
-				
-		fw.close();
-		return date;
+//		
+//		FileReader fr = new FileReader(file);		
+//		BufferedReader br = new BufferedReader(fr);
+//		br.readLine();
+//		
+//		ArrayList<WeatherDate> dates = new ArrayList<>();
+//		
+//		while(true) {
+//			
+//		String s = br.readLine();	
+//		if(s==null) {
+//			break;
+//		}			
+//		
+//		StringTokenizer str = new StringTokenizer(s,"-");
+//				
+//		
+//			
+//			WeatherDate date = new WeatherDate();
+//			date.setName(str.nextToken());
+//			date.setTemp(Integer.parseInt(str.nextToken()));
+//			date.setWeather(str.nextToken());
+//			date.setHum(Integer.parseInt(str.nextToken()));
+//			dates.add(date);
+//		
+//		}
+//				
+//	
+//		
+//		
+//		br.close();
+//		fr.close();
+//		
+//		return dates;	
+//	}
+//	
+//	//검색
+//	public WeatherDate getDetail(List<WeatherDate> ar,Scanner sc) {
+//		System.out.println("도시명 입력");
+//		WeatherDate date = new WeatherDate();
+//		date.setName(sc.next());
+//		for(WeatherDate w:ar) {
+//			if(w.getName().equals(date.getName())) {
+//				return w;
+//				
+//			}
+//		}
+//		return null; //못찾으면 널 
+//		
+//	}
+//	//추가
+//	public boolean add(List<WeatherDate> ar, Scanner sc) {
+//		WeatherDate date = new WeatherDate();
+//		System.out.println("도시 입력");
+//		date.setName(sc.next());
+//		System.out.println("기온 입력");
+//		date.setTemp(sc.nextInt());
+//		System.out.println("날씨 입력");
+//		date.setWeather(sc.next());
+//		System.out.println("습도 입력");
+//		date.setHum(sc.nextInt());
+//		
+//		
+//		return ar.add(date); // true 는 성공 false 실패
+//	}
+//	
+//	//삭제
+//	public boolean delete(List<WeatherDate> ar, Scanner sc) {
+//		boolean result = false;
+//		System.out.println("도시명 입력");
+//		String name = sc.next();
+//		for(WeatherDate w:ar) {
+//			if(w.getName().equals(name)) {
+//				result = ar.remove(w);
+//				break;
+//			}
+//		}
+//		return result;
+//	}
+//	
+//	//저장
+//	public WeatherDate save(List<WeatherDate> ar) throws Exception {
+//		//1.파일에 작성
+//		//파일명은 save.txt
+//		//##날씨정보
+//		//도시명-기온-정보-습도
+//		//20231220+count
+//		WeatherDAO.count++;
+//		
+//		Calendar ca = Calendar.getInstance();
+////		int y = ca.get(Calendar.YEAR);
+////		int m = ca.get(Calendar.MONTH);
+////		int d = ca.get(Calendar.DATE);
+////		String fileName = String.valueOf(y)+m+d+WeatherDAO.count;
+//		String fileName=ca.getTimeInMillis()+".txt";
+//		
+//		File file = new File("c:\\study\\weather");
+//		file = new File(file,fileName);
+//		FileWriter fw = new FileWriter(file); 
+//		WeatherDate date = new WeatherDate();
+//		
+//		fw.write("##날씨정보\r");
+//		
+//		for(WeatherDate w:ar) {
+//	
+//			fw.write(w.getName()+"-");
+//			fw.write(w.getTemp()+"-");
+//			fw.write(w.getWeather()+"-");
+//			fw.write(w.getHum()+"\r");
+//		
+//			fw.flush();	
+//		}
+//				
+//		fw.close();
+//		return date;
 	}
 		
 		
