@@ -28,27 +28,36 @@ public class WeatherDAO {
 	//파싱 작업 ,토큰 분류별 저장 그걸 Arayy 저장  
 	public ArrayList<WeatherDate> getWeathers() throws Exception {
 		
+		ArrayList<WeatherDate> dates = new ArrayList<>();
 		
 		File file = new File("c:\\study\\weather");	
-		String [] st = file.list();
+		String [] names = file.list();
+//		long [] name = new long[names.length];
+		long max=0;
 		
-		for(int i=0; i<st.length;i++) {
-			st[i].split(".");
+		for(int i=0;i<names.length;i++) {
+//			String [] r = names[i].split(".");
+			//name[i]
+//			long n =Long.parseLong(r[0]) ;
+			long n= Long.parseLong(names[i].substring(0, names[i].lastIndexOf(".")));
+			if(max<n) {
+				max=n;
+			}
 		}
 		
-//		for(String s:st) {
-//			//1703044095259.txt\
-//			String [] st2 = new String[1];
-//			String [] str = s.split(".");
-//			st2[0]=str[0];
+//		
+//		for(int i=0;i<name.length;i++) {
+//			if(max<name[i]) {
+//				max=name[i];
+//			}
 //		}
+
 		
-		
+		file = new File(file,max+".txt");	
 		FileReader fr = new FileReader(file);		
 		BufferedReader br = new BufferedReader(fr);
 		br.readLine();
 		
-		ArrayList<WeatherDate> dates = new ArrayList<>();
 		
 		while(true) {
 			
